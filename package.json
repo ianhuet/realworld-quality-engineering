@@ -1,0 +1,16 @@
+{
+  "dependencies": {},
+  "devDependencies": {
+    "lerna": "^7.1.4"
+  },
+  "name": "@realworld-qe/root",
+  "npmClient": "yarn",
+  "private": true,
+  "scripts": {
+    "build": "lerna run build",
+    "start": "lerna run start"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
