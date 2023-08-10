@@ -12,6 +12,15 @@ import {
 
 const app = express();
 
+if (process.env.NODE_ENV === 'development') {
+  // eslint-disable-next-line
+  const cors = require('cors');
+  app.use(cors({
+    credentials: true,
+    origin: '*',
+  }));
+}
+
 // Allows parsing of json in the body of the request.
 app.use(express.json());
 

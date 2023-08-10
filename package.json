@@ -1,4 +1,7 @@
 {
+  "bugs": {
+    "url": "https://github.com/ianhuet/realworld-quality-engineering/issues"
+  },
   "dependencies": {},
   "devDependencies": {
     "lerna": "^7.1.4"
@@ -8,7 +11,9 @@
   "private": true,
   "scripts": {
     "build": "lerna run build",
-    "start": "lerna run start"
+    "dev": "lerna run dev",
+    "start": "lerna run start",
+    "db:start": "docker-compose up -d"
   },
   "workspaces": [
     "packages/*"
