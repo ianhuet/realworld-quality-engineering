@@ -15,7 +15,7 @@
     "app:start": "lerna run start",
     "db:start": "docker-compose up -d",
     "db:setup": "lerna run db:setup",
-    "install": "cd packages/backend && yarn && cd .. && cd frontend && yarn"
+    "setup": "cd packages/backend && yarn && cd .. && cd frontend && yarn"
   },
   "workspaces": [
     "packages/*"
