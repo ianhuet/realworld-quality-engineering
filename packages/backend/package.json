@@ -9,6 +9,7 @@
     "lint": "npx eslint .",
     "db:migrate": "dotenv -e .env.development -- npx prisma db push",
     "db:seed": "dotenv -e .env.development -- npx prisma db seed",
+    "db:setup": "yarn db:migrate && yarn db:seed",
     "start:debug": "DEBUG=express:* node dist/server.js",
     "start": "node dist/server.js",
     "studio:develop": "dotenv -e .env.development -- npx prisma studio",

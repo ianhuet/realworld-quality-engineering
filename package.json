@@ -10,10 +10,12 @@
   "npmClient": "yarn",
   "private": true,
   "scripts": {
-    "build": "lerna run build",
-    "dev": "lerna run dev",
-    "start": "lerna run start",
-    "db:start": "docker-compose up -d"
+    "app:build": "lerna run build",
+    "app:dev": "lerna run dev",
+    "app:start": "lerna run start",
+    "db:start": "docker-compose up -d",
+    "db:setup": "lerna run db:setup",
+    "install": "cd packages/backend && yarn && cd .. && cd frontend && yarn"
   },
   "workspaces": [
     "packages/*"
