@@ -4,11 +4,21 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@actions/core": "^1.10.0",
     "lerna": "^7.1.4"
   },
+  "engines": {
+    "npm": ">9.0.0",
+    "node": ">=18.0.0"
+  },
+  "engineStrict": true,
   "name": "@realworld-qe/root",
   "npmClient": "yarn",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianhuet/realworld-quality-engineering.git"
+  },
   "scripts": {
     "app:build": "lerna run build",
     "app:dev": "lerna run dev",

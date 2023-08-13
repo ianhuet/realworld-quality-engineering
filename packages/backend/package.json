@@ -1,7 +1,7 @@
 {
   "name": "@realworld-qe/backend",
   "version": "1.0.2",
-  "description": "A RealWorld Backend API made with express + prisma",
+  "description": "A RealWorld Backend API made with Express + Prisma",
   "main": "dist/server.js",
   "scripts": {
     "build": "dotenv -e .env -- npx tsc",
@@ -14,15 +14,12 @@
     "start": "node dist/server.js",
     "studio:develop": "dotenv -e .env.development -- npx prisma studio",
     "style": "npx prettier --check .",
+    "test:ci": "jest --ci",
     "test:watch": "dotenv -e .env.development -- jest -i --watch --coverage=false",
     "test": "dotenv -e .env.development -- jest -i"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SeuRonao/realworld-express-prisma-backend.git"
   },
   "keywords": [
     "express",
@@ -33,9 +30,6 @@
   ],
   "author": "Ronan Pardo Soares",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/SeuRonao/realworld-express-prisma-backend/issues"
-  },
   "homepage": "https://github.com/SeuRonao/realworld-express-prisma-backend#readme",
   "dependencies": {
     "@prisma/client": "^4.5.0",

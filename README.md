@@ -6,7 +6,7 @@
 This is a systematic, exercise in quality engineering. Based on an existing [Client](https://github.com/gothinkster/react-redux-realworld-example-app/tree/master) / [Server](https://github.com/SeuRonao/realworld-express-prisma/tree/main) application, drawn from the [RealWorld demo app](https://www.realworld.how/) initiative. It will be used to take a testing strategy through a full cycle - from initial research to full implementation and commisioning.
 
 **Backend**
-
+Built with Typescript + Express + Prisma including CRUD operations, authentication, routing, pagination, and more.
 
 **Database**
 
@@ -35,3 +35,5 @@ From the root directory:
 4. Run `yarn db:setup` to apply Prisma migration and data seeding.
 5. Run `yarn app:dev` to launch both frontend and backend development servers.
 6. Go to [http://localhost:5100](http://localhost:5100).
+
+> Ports: FE (5100), API (5101), DB (54320)

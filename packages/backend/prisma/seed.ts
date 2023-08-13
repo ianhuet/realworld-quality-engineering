@@ -5,18 +5,22 @@ import { createArticle, createComment, createTag, createUser } from './factories
 const prisma = new PrismaClient();
 
 async function seed() {
+  const numTags = 5;
+  const numUsers = 5;
+  const numArticles = 10;
+
   await prisma.tag.createMany({
-    data: Array.from({ length: 5 }, createTag),
+    data: Array.from({ length: numTags }, createTag),
   });
   await prisma.user.createMany({
-    data: Array.from({ length: 5 }, createUser),
+    data: Array.from({ length: numUsers }, createUser),
   });
   const users = await prisma.user.findMany();
   const authorUsernames = users.map((user) => user.username);
 
   await prisma.article.createMany({
     data: authorUsernames.flatMap((authorUsername) =>
-      Array.from({ length: 2 }, () => createArticle(authorUsername))
+      Array.from({ length: numArticles }, () => createArticle(authorUsername))
     ),
   });
   const articles = await prisma.article.findMany();
