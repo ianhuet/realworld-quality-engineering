@@ -9,7 +9,7 @@ Built with Typescript + Express + Prisma including CRUD operations, authenticati
 Built with PostgreSql.
 
 **Frontend**
-
+React + Redux codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld spec and API.
 
 ## Setup Local Development Environment
 [Yarn](https://yarnpkg.com/) is the preferred package manager on this project. [Docker Desktop](https://www.docker.com/products/docker-desktop/) is also required to provide the Postgres database the system needs.
