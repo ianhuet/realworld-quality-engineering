@@ -1,5 +1,6 @@
 import { Response } from "express";
 import { Request } from "express-jwt";
+
 import commentCreateValidator from "./commentCreateValidator";
 
 // The mock response creation in order to reset mock calls
@@ -19,8 +20,10 @@ describe("Test commentsCreateValidator", function () {
     const mockRes = mockResponse();
     const next = jest.fn();
     commentCreateValidator(mockReq, mockRes as unknown as Response, next);
+
     expect(next).toHaveBeenCalled();
   });
+
   test("Request does not have comment property in body", async function () {
     const mockReq = {
       body: {},
@@ -28,8 +31,10 @@ describe("Test commentsCreateValidator", function () {
     const mockRes = mockResponse();
     const next = jest.fn();
     commentCreateValidator(mockReq, mockRes as unknown as Response, next);
+
     expect(mockRes.status).toBeCalledWith(400);
   });
+
   test("Comment inside body of request is not an object", async function () {
     const mockReq = {
       body: { comment: "This should be an object instead" },
@@ -39,6 +44,7 @@ describe("Test commentsCreateValidator", function () {
     commentCreateValidator(mockReq, mockRes as unknown as Response, next);
     expect(mockRes.status).toBeCalledWith(400);
   });
+
   test("There is no string property inside comment on the body", async function () {
     const mockReq = {
       body: { comment: {} },
@@ -46,6 +52,7 @@ describe("Test commentsCreateValidator", function () {
     const mockRes = mockResponse();
     const next = jest.fn();
     commentCreateValidator(mockReq, mockRes as unknown as Response, next);
+
     expect(mockRes.status).toBeCalledWith(400);
   });
 });
